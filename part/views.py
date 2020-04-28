@@ -95,7 +95,7 @@ def upload_file(request):
                 sheet.write(i, 4, field[0])
         now = time.strftime("%Y-%m-%d-%H-%M-%S", time.localtime(time.time()))
         global fn
-        fn='part' + now + '.xlsx' #保存文件名
+        fn='part' + now + '.xls' #保存文件名
 
         ff=dirname+'/download/'+fn
         Excel.save(dirname+'/download/'+fn)  # 保存
@@ -112,6 +112,7 @@ import django.utils.timezone as timezone
 
 from django.http import FileResponse
 def download(request):
+    dirname = os.path.dirname(__file__)
     global fn
     ff='D:/python/onlinepart/part/download/'+fn
      # file=open('C:/Users/nantp/Desktop/part.xlsx','rb')
